@@ -53,8 +53,8 @@ function calculateWinner(fields: XO[]) {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
+  for (const line of lines) {
+    const [a, b, c] = line;
     if (fields[a] && fields[a] === fields[b] && fields[a] === fields[c]) {
       return fields[a];
     }
