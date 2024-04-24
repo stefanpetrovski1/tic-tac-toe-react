@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+}
+
+.field {
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  margin: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
