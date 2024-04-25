@@ -1,50 +1,59 @@
 import Field from './Field';
-import { XO } from './types';
+import { FieldMoves } from './types';
 
-type BoardProps = { fields: Array<XO>; handleOnClick: (idx: number) => void };
+type BoardProps = {
+  fields: Array<FieldMoves | null>;
+  handleOnClick: (idx: number) => void;
+};
 
 export default function Board({ fields, handleOnClick }: BoardProps) {
+  function getValue(idx: number) {
+    if (fields[idx] === null || fields[idx] === undefined) {
+      return null;
+    }
+    return fields[idx]!.value;
+  }
   return (
-    <div>
+    <div className="board">
       <div className="row">
         <Field
-          value={fields[0]}
+          value={getValue(0)}
           onFieldClick={() => handleOnClick(0)}
         />
         <Field
-          value={fields[1]}
+          value={getValue(1)}
           onFieldClick={() => handleOnClick(1)}
         />
         <Field
-          value={fields[2]}
+          value={getValue(2)}
           onFieldClick={() => handleOnClick(2)}
         />
       </div>
       <div className="row">
         <Field
-          value={fields[3]}
+          value={getValue(3)}
           onFieldClick={() => handleOnClick(3)}
         />
         <Field
-          value={fields[4]}
+          value={getValue(4)}
           onFieldClick={() => handleOnClick(4)}
         />
         <Field
-          value={fields[5]}
+          value={getValue(5)}
           onFieldClick={() => handleOnClick(5)}
         />
       </div>
       <div className="row">
         <Field
-          value={fields[6]}
+          value={getValue(6)}
           onFieldClick={() => handleOnClick(6)}
         />
         <Field
-          value={fields[7]}
+          value={getValue(7)}
           onFieldClick={() => handleOnClick(7)}
         />
         <Field
-          value={fields[8]}
+          value={getValue(8)}
           onFieldClick={() => handleOnClick(8)}
         />
       </div>

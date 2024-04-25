@@ -1,4 +1,5 @@
-type FieldPropsType = { value: 'X' | 'O'; onFieldClick: () => void };
+import { XO } from './types';
+type FieldPropsType = { value: XO | null; onFieldClick: () => void };
 
 export default function Field({ value, onFieldClick }: FieldPropsType) {
   const classes = ['field'];
